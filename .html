@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Little Surprise ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        background: radial-gradient(circle at top, #ffdde1, #ee9ca7);
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        z-index: 10;
+        animation: fadeIn 1.2s ease;
+        max-width: 360px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        color: #ff477e;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #555;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 16px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(45deg, #ff477e, #ff85a1);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(255,71,126,0.6);
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 25px rgba(255,71,126,0.9);
+    }
+
+    .message {
+        display: none;
+        margin-top: 20px;
+        font-weight: bold;
+        color: #ff477e;
+        animation: pop 0.8s ease;
+    }
+
+    @keyframes pop {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        bottom: -20px;
+        font-size: 20px;
+        animation: float 6s linear infinite;
+        color: rgba(255, 71, 126, 0.8);
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-120vh); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Hey You ❤️</h1>
+    <p>Someone amazing deserves a smile today.</p>
+    <button onclick="nextSurprise()">Tap Me ✨</button>
+
+    <div class="message" id="msg1">You light up every room 🌟</div>
+    <div class="message" id="msg2">Your smile is my favorite 💕</div>
+    <div class="message" id="msg3">Never forget how special you are 🌸</div>
+</div>
+
+<script>
+let step = 0;
+
+function nextSurprise() {
+    step++;
+    if (step === 1) document.getElementById("msg1").style.display = "block";
+    if (step === 2) document.getElementById("msg2").style.display = "block";
+    if (step === 3) document.getElementById("msg3").style.display = "block";
+}
+
+/* Floating hearts generator */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 300);
+</script>
+<div class="card">
+    <h1>Hey You ❤️</h1>
+    <p>I made something special just for you.</p>
+    <button onclick="location.href='khushi1.html'">Next Surprise ➜</button>
+</div>
+
+
+</body>
+</html>
